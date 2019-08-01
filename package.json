@@ -1,21 +1,27 @@
 {
-  "name": "tag_mr_app",
+  "name": "react-test-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "@craco/craco": "^5.2.4",
+    "material-components-web": "^3.1.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco  start",
+    "build": "craco build",
+    "test": "craco  test",
+    "lint": "eslint src/*.js",
+    "serve": "serve -S build",
+    "preserve": "npm run build",
+    "nodemon": "nodemon --watch craco-config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "./",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -27,5 +33,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "css-loader": "^3.1.0",
+    "glob": "^7.1.4",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
+  },
+  "cracoConfig": "craco-config.js"
 }
