@@ -1,7 +1,7 @@
 {
   "name": "react-test-app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@craco/craco": "5.2.4",
     "material-components-web": "3.1.0",
@@ -15,13 +15,12 @@
     "test": "craco  test",
     "lint": "eslint src/*.js",
     "serve": "serve -S build",
-    "generate-report": "lighthouse --chrome-flags=\"--headless --no-sandbox\" http://localhost:8080 --output html --output-path ./report.html",
+    "report": "lighthouse --chrome-flags=\"--headless --no-sandbox\" http://localhost:8080 --output html --output-path ./report.html",
     "preserve": "npm run build",
-    "pm2-serve": "pm2 delete nac-ecom || pm2 serve --spa build --name nac-ecom",
-    "pm2-rm": "pm2 delete nac-ecom",
-    "nodemon": "nodemon --watch craco-config.js",
+    "pm2-serve": "pm2 delete react-test-app || pm2 serve --spa build --name react-test-app",
+    "pm2-rm": "pm2 delete react-test-app",
+    "nodemon": "nodemon --watch craco-config.js --exec npm start",
     "sb": "start-storybook",
-    "sb-dev": "nodemon --exec npm run sb --watch .storybook stories package.json"
   },
   "eslintConfig": {
     "extends": "react-app"
