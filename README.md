@@ -32,6 +32,14 @@ This repo contains basic template to get started with react involves playground 
 
 <br>
 
+## PLANNED
+- ✔ **PIPELINES** - Pipleline for Github, Gitlab and Azure DevOps
+- ✔ **SERVICE-WORKER** - Extending service worker with custom files
+... more to come 👨‍💻
+
+<br>
+
+
 ## NOTE
 
 will be testing different features in specific branch except master which contains all stable code to get started. Feel free use it and play around, let me know if any features that you might want to add.
