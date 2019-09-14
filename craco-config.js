@@ -48,5 +48,12 @@ module.exports = {
                 },
             ],
         },
+        resolve:{
+            alias: {
+                "@hooks":path.resolve(__dirname, 'src/hooks/'),
+                "@contexts":path.resolve(__dirname, 'src/contexts/'),
+                "@config$": path.resolve(__dirname, 'src/config.js')
+            }
+        }
     }
 }

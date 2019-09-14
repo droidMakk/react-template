@@ -1,6 +1,6 @@
 {
-  "name": "react-test-app",
-  "version": "0.1.0",
+  "name": "react-template-app",
+  "version": "0.2.0",
   "private": false,
   "dependencies": {
     "@craco/craco": "5.2.4",
@@ -17,8 +17,8 @@
     "serve": "serve -S build",
     "report": "lighthouse --chrome-flags=\"--headless --no-sandbox\" http://localhost:8080 --output html --output-path ./report.html",
     "preserve": "npm run build",
-    "pm2-serve": "pm2 delete react-test-app || pm2 serve --spa build --name react-test-app",
-    "pm2-rm": "pm2 delete react-test-app",
+    "pm2-serve": "pm2 delete react-template-app || pm2 serve --spa build --name react-template-app",
+    "pm2-rm": "pm2 delete react-template-app",
     "nodemon": "nodemon --watch craco-config.js --exec npm start",
     "sb": "start-storybook"
   },
