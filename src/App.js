@@ -1,13 +1,17 @@
 import React from 'react';
+
 import './App.scss';
+import RouteApp from './routes';
+
+import { GlobalProvider, NetworkProvider } from 'contexts/index';
 
 function App() {
   return (
-    <div className="App-header" >
-      <button class="mdc-button">
-        <span class="mdc-button__label">Button</span>
-      </button>
-    </div>
+    <GlobalProvider>
+      <NetworkProvider>
+        <RouteApp />
+      </NetworkProvider>
+    </GlobalProvider>
   );
 }
 

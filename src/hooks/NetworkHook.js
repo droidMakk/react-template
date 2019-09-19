@@ -1,22 +1,32 @@
 import React from 'react';
-import { NetworkContext } from '@contexts/NetworkContext';
+import { NetworkContext } from 'contexts/NetworkContext';
 
 // HOOK which sends the network request
 export const useNetworkRequest = (url: string, body: string | object | null = null, mapper: ({ }) => Promise<{}> = null) => {
+    const initialStatus = { status: null, statusText: '' };
     const { NetworkCtx: { apiUrl } } = React.useContext(NetworkContext);
     const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState(false);
     const [data, setData] = React.useState({});
     const [mapped, setMapped] = React.useState({});
-    const [status, setStatus] = React.useState({ status: null, statusText: '' })
+    const [status, setStatus] = React.useState(initialStatus)
 
     // PARSE FOR NETWORK REQUEST
     const method = data ? 'POST' : 'GET';
     url = `${apiUrl}${url}`
     body = typeof body === "string" ? body : JSON.stringify(body);
 
-    React.useEffect(() => {
+    const resetState = () => {
+        setMapped({});
         setLoading(true);
+        setError(false);
+        setData({});
+        setMapped({});
+        setStatus(initialStatus);
+    }
+
+    const makeNetworkRequest = () => {
+        resetState();
         fetch(url, { method, body })
             .then(res => {
                 setStatus({ status: res.status, statusText: res.statusText })
@@ -35,7 +45,7 @@ export const useNetworkRequest = (url: string, body: string | object | null = nu
                 setError(true);
                 setLoading(false);
             });
-    }, [url, data, body, method, mapper]);
+    }
 
-    return { loading, error, status, data, mapped }
+    return { loading, error, status, data, mapped, refetch: makeNetworkRequest }
 }

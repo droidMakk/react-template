@@ -1,7 +1,7 @@
 import React from 'react';
 import './input.scss';
 
-export const Input = props => {
+const Input = props => {
 
     let { className } = props;
 
