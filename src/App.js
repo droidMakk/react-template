@@ -2,16 +2,13 @@ import React from 'react';
 
 import './App.scss';
 import RouteApp from './routes';
-
-import { GlobalProvider, NetworkProvider } from 'contexts/index';
+import { Provider } from 'store';
 
 function App() {
   return (
-    <GlobalProvider>
-      <NetworkProvider>
-        <RouteApp />
-      </NetworkProvider>
-    </GlobalProvider>
+        <Provider>
+          <RouteApp />
+        </Provider>
   );
 }
 

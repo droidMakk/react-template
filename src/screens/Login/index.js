@@ -1,12 +1,11 @@
 import React from 'react';
-import { GlobalContext } from 'contexts';
+import { Context } from 'store';
 
 const Login = () => {
 
-    const { GlobalCtx } = React.useContext(GlobalContext);
-    
+    const { state, handlers } = React.useContext(Context);
 
-    return(
+    return (
         <div>
             Login
         </div>

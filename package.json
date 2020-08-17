@@ -3,17 +3,16 @@
   "version": "0.2.0",
   "private": false,
   "dependencies": {
-    "@craco/craco": "5.2.4",
-    "@reach/router": "^1.2.1",
-    "material-components-web": "3.1.0",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "react-scripts": "3.0.1"
+    "@reach/router": "^1.3.4",
+    "material-components-web": "7.0.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
-    "start": "craco  start",
-    "build": "craco build",
-    "test": "craco  test",
+    "start": "react-scripts  start",
+    "build": "react-scripts build",
+    "test": "react-scripts  test",
     "postinstall": "npm run build",
     "lint": "eslint src/*.js",
     "serve": "serve -S build",
@@ -21,7 +20,6 @@
     "preserve": "npm run build",
     "pm2-serve": "pm2 delete react-template-app || pm2 serve --spa build --name react-template-app",
     "pm2-rm": "pm2 delete react-template-app",
-    "nodemon": "nodemon --watch craco-config.js --exec npm start",
     "sb": "start-storybook"
   },
   "eslintConfig": {
@@ -41,17 +39,9 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "5.2.4",
-    "@storybook/react": "5.1.10",
-    "craco-alias": "^1.0.4",
-    "css-loader": "3.1.0",
-    "glob": "7.1.4",
-    "mini-css-extract-plugin": "0.8.0",
-    "node-sass": "4.12.0",
-    "pm2": "3.5.1",
-    "sass-loader": "7.1.0",
-    "serve": "11.0.2",
-    "style-loader": "0.23.1"
-  },
-  "cracoConfig": "craco-config.js"
+    "@storybook/react": "6.0.10",
+    "node-sass": "4.14.1",
+    "pm2": "4.4.1",
+    "serve": "11.3.2"
+  }
 }

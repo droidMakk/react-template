@@ -1,6 +1,7 @@
 import React from 'react';
 
 import initialState from './initialState';
+import * as handlers from './handlers';
 
 export const Context = React.createContext({
     state: initialState,
@@ -8,7 +9,7 @@ export const Context = React.createContext({
 });
 
 export function Provider(props) {
-    const [state, setState] = React.useState(loadUserData());
+    const [state, setState] = React.useState(initialState);
 
     const modHandlers = {};
 
