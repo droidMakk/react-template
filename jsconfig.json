@@ -1,14 +1,8 @@
 {
     "compilerOptions": {
-        "baseUrl": "src",
-        "paths": {
-            "app": [ "src", "src/*" ],
-            "contexts":[ "src/contexts/*", "src/contexts" ],
-            "hooks": [ "src/hooks/*", "src/hooks" ]
-        }
+        "baseUrl": "src"
     },
-    "exclude": [
-        "node_modules",
-        "**/node_modules/*"
+    "include": [
+        "src"
     ]
 }
